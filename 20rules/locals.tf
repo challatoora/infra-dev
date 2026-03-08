@@ -13,3 +13,7 @@ locals {
 locals {
   user_id=data.aws_ssm_parameter.user_id.value
 }
+
+locals {
+  redis_id=data.aws_ssm_parameter.redis_id.value
+}
