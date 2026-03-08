@@ -19,4 +19,4 @@ echo "[${component}]" > inventory
 echo "localhost ansible_connection=local" >> inventory
 
 # Run playbook with Python 3
-ansible-playbook -i inventory -e component=$component roboshop.yaml
+ansible-playbook -i inventory -e component=$component -e ansible_python_interpreter=/usr/bin/python3 roboshop.yaml
