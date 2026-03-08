@@ -30,7 +30,7 @@ connection {
 provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo bash /tmp/bootstrap.sh mongodb"
+        "sudo sh /tmp/bootstrap.sh mongodb"
     ]
   }
 }

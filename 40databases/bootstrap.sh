@@ -2,7 +2,7 @@
 set -ex
 
 component=$1
-
+dnf install -y ansible git python3 python3-libdnf
 dnf install ansible git -y
 
 cd /home/ec2-user
