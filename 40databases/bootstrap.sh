@@ -10,4 +10,4 @@ git clone https://github.com/challatoora/ansible-roboshop-tf.git
 
 cd ansible-roboshop-tf
 
-ansible-playbook -e component=$component roboshop.yaml
+ansible-playbook -e component=$component -e ansible_python_interpreter=/usr/bin/python3 roboshop.yaml
