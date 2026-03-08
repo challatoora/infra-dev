@@ -2,8 +2,12 @@
 set -ex
 
 component=$1
-dnf install -y ansible git python3 python3-libdnf
-dnf install ansible git -y
+
+# Install required packages
+sudo dnf install -y python3 python3-pip git
+
+# Install latest ansible using pip (more stable)
+pip3 install ansible
 
 cd /home/ec2-user
 
