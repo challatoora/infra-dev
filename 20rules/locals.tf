@@ -22,6 +22,3 @@ locals {
   mysql_id=data.aws_ssm_parameter.mysql_id.value
 }
 
-locals {
-  rabbitmq_id=data.aws_ssm_parameter.rabbitmq_id.value
-}
