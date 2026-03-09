@@ -17,3 +17,7 @@ data "aws_ssm_parameter" "catalogue_id" {
 data "aws_ssm_parameter" "user_id" {
   name =  "/${var.project}/${var.environment}/user_sg_id"
 }
+
+data "aws_ssm_parameter" "mysql_id" {
+  name =  "/${var.project}/${var.environment}/mysql_sg_id"
+}

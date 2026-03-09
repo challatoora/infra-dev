@@ -17,3 +17,7 @@ locals {
 locals {
   redis_id=data.aws_ssm_parameter.redis_id.value
 }
+
+locals {
+  mysql_id=data.aws_ssm_parameter.mysql_id.value
+}

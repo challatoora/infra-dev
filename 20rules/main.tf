@@ -34,11 +34,20 @@ resource "aws_security_group_rule" "mongodb_user" {
   security_group_id = local.mongodb_id
 }
 
-resource "aws_security_group_rule" "redis_Bastion" { # mongodb accespting connection from bastion
+resource "aws_security_group_rule" "redis_Bastion" { 
   type = "ingress"
   from_port = 22
   to_port = 22
   protocol = "tcp"
   source_security_group_id = local.bastion_id
   security_group_id = local.redis_id
+}
+
+resource "aws_security_group_rule" "mysql_Bastion" { # mongodb accespting connection from bastion
+  type = "ingress"
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  source_security_group_id = local.bastion_id
+  security_group_id = local.mysql_id
 }
