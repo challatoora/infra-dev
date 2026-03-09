@@ -52,4 +52,12 @@ resource "aws_security_group_rule" "mysql_Bastion" { # mongodb accespting connec
   security_group_id = local.mysql_id
 }
 
+resource "aws_security_group_rule" "rabbitmq_Bastion" { # mongodb accespting connection from bastion
+  type = "ingress"
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  source_security_group_id = local.bastion_id
+  security_group_id = local.rabbitmq_id
+}
 
