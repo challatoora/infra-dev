@@ -69,7 +69,22 @@ resource "aws_security_group_rule" "backend-alb_Bastion" { # mongodb accespting 
   security_group_id = local.backend_alb
 }
 
+resource "aws_security_group_rule" "catalogue_Bastion" { # mongodb accespting connection from bastion
+  type = "ingress"
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  source_security_group_id = local.bastion_id
+  security_group_id = local.catalogue_id
+}
 
-
+resource "aws_security_group_rule" "catalogue_Backend_alb" { 
+  type = "ingress"
+  from_port = 8080
+  to_port = 8080
+  protocol = "tcp"
+  source_security_group_id = local.backend_alb
+  security_group_id = local.catalogue_id
+}
 
 
