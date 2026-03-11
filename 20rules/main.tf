@@ -60,4 +60,16 @@ resource "aws_security_group_rule" "rabbitmq_Bastion" { # mongodb accespting con
   source_security_group_id = local.bastion_id
   security_group_id = local.rabbitmq_id
 }
+resource "aws_security_group_rule" "backend-alb_Bastion" { # mongodb accespting connection from bastion
+  type = "ingress"
+  from_port = 80
+  to_port = 80
+  protocol = "tcp"
+  source_security_group_id = local.bastion_id
+  security_group_id = local.backend_alb
+}
+
+
+
+
 

@@ -26,3 +26,6 @@ locals {
   rabbitmq_id=data.aws_ssm_parameter.rabbitmq_id.value
 }
 
+locals {
+  backend_alb=data.aws_ssm_parameter.backend_alb.value
+}
