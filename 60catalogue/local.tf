@@ -1,9 +1,13 @@
 locals {
-  backend= data.aws_ssm_parameter.backend_alb_sg_id.value
+  catalogue= data.aws_ssm_parameter.catalogue_sg_id.value
+
+}
+locals {
+  ami_id=data.aws_ami.joindevops
 }
 
 locals {
-    subnet=split(",",data.aws_ssm_parameter.private_subnet_id.value)
+    subnet=split(",",data.aws_ssm_parameter.private_subnet_id.value)[0]
 
 
 
