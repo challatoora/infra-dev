@@ -9,7 +9,7 @@ terraform {
 
     backend "s3" {
     bucket = "challatoor-dev"
-    key    = "infradev_sg_backend_alb"
+    key    = "infradev_sg_catalogue"
     region = "us-east-1"
     encrypt = true
    # use_lockfile = true

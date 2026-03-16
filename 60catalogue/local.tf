@@ -1,9 +1,5 @@
 locals {
-  catalogue= data.aws_ssm_parameter.catalogue_sg_id.value
-
-}
-locals {
-  ami_id=data.aws_ami.joindevops.id
+  backend= data.aws_ssm_parameter.catalogue_sg_id.value
 }
 
 locals {

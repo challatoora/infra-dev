@@ -1,8 +1,8 @@
 resource "aws_instance" "catalogue" {
-  ami           = local.ami_id
+  ami           = local.catalogue_sg_id
   instance_type = "t3.micro"
   subnet_id = local.subnet
-  vpc_security_group_ids = [local.catalogue]
+  vpc_security_group_ids = [local.catalogue_sg_id]
    tags = merge(
     {
         Name = "${var.project}-${var.environment}-catalogue"
@@ -31,7 +31,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh catalogue"
+        "sudo sh /tmp/bootstrap.sh mongodb"
     ]
   }
 }
