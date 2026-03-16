@@ -1,17 +1,16 @@
 resource "aws_instance" "catalogue" {
-  ami           = local.catalogue_sg_id
-  instance_type = "t3.micro"
-  subnet_id = local.subnet
+  ami                    = local.ami
+  instance_type          = "t3.micro"
+  subnet_id              = local.subnet
   vpc_security_group_ids = [local.catalogue_sg_id]
-   tags = merge(
+
+  tags = merge(
     {
-        Name = "${var.project}-${var.environment}-catalogue"
+      Name = "${var.project}-${var.environment}-catalogue"
     },
     local.common_tags
   )
-
-  }
-
+}
   resource "terraform_data" "catalogue" {
   triggers_replace = [
     aws_instance.catalogue.id
@@ -31,7 +30,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh mongodb"
+        "sudo sh /tmp/bootstrap.sh catalogue dev"
     ]
   }
 }
