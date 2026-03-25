@@ -19,7 +19,22 @@ locals {
 }
 
 locals {
+  cart_id=data.aws_ssm_parameter.cart_id.value
+}
+
+locals {
+  frontend_id=data.aws_ssm_parameter.frontend_id.value
+}
+locals {
   mysql_id=data.aws_ssm_parameter.mysql_id.value
+}
+
+locals{
+  shipping_id = data.aws_ssm_parameter.shipping_id.value
+}
+
+locals {
+   payment_id = data.aws_ssm_parameter.payment_id.value
 }
 
 locals {
@@ -29,3 +44,8 @@ locals {
 locals {
   backend_alb=data.aws_ssm_parameter.backend_alb.value
 }
+
+locals {
+  frontend_alb_sg_id=data.aws_ssm_parameter.frontend_alb_sg_id.value
+}
+
