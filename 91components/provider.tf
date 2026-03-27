@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "remote-state-challatoor-dev " # Replace with your unique bucket name
+    bucket  = "challatoor-dev " # Replace with your unique bucket name
     key     = "roboshop-dev-components"
     region  = "us-east-1"
     encrypt = true
