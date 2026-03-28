@@ -31,7 +31,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh mongodb ${var.environment}"
+        "sudo sh /tmp/bootstrap.sh mongodb"
     ]
   }
 }
@@ -69,7 +69,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh redis ${var.environment}"
+        "sudo sh /tmp/bootstrap.sh redis"
     ]
   }
 }
@@ -106,7 +106,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh mysql ${var.environment}"
+        "sudo sh /tmp/bootstrap.sh mysql"
     ]
   }
 }
@@ -143,7 +143,7 @@ connection {
   provisioner "remote-exec" {
     inline = [
         "chmod +x /tmp/bootstrap.sh",
-        "sudo sh /tmp/bootstrap.sh rabbitmq ${var.environment}"
+        "sudo sh /tmp/bootstrap.sh rabbitmq"
     ]
   }
 }
